@@ -1,0 +1,283 @@
+a {
+    text-decoration: none !important; /* Sobreescribe el estilo de Bootstrap */
+    color: inherit !important;       /* Opcional, para heredar el color del padre */
+}
+
+
+header{
+    position: fixed;
+    margin: 0 auto;
+    width: 100vw;
+    border: solid red 1px;
+}
+
+nav{
+    margin: .7rem auto;
+    padding: 0;
+    width: 90vw;
+    height: 4.5rem;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.8px);
+    -webkit-backdrop-filter: blur(5.8px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    position: fixed;
+    
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0 13rem;
+}
+
+nav ul li{
+    margin: 4rem;
+}
+
+.separador{
+    height: 10rem;
+    width: 100vw;
+}
+
+.separador2{
+    height: 2rem;
+    width: 100vw;
+}
+
+.tour {
+    
+    height: 70vh; /* Altura del contenedor */
+    width: 80vw; /* Ancho del contenedor */
+    margin: 1rem auto; /* Centrado horizontal con margen automático */
+    border: dotted green 5px;
+    border-radius: 15px;
+    overflow: hidden; /* Evita que la imagen sobresalga */
+    position: relative; /* Necesario para posicionar la imagen absolutamente */
+}
+
+#tourCarrusel {
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: 100%; /* La imagen ocupará el 100% de la altura del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin deformarse */
+    position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+    top: 0; /* Asegura que la imagen comience desde la parte superior */
+    left: 0; /* Asegura que la imagen comience desde la izquierda */
+    transition: opacity 0.5s ease-in-out; /* Efecto de transición suave para el desvanecimiento */
+}
+
+.envivo-button {
+    margin: 0 auto;
+    border: solid blue 5px;
+    width: 30vw;
+    border-radius: 30px;
+    height: 10vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.music-button{
+  
+    border-radius:100%;
+    border-style: none;
+    width: 30px;
+    height: 30px;
+    
+}
+.programas-section{
+    margin: 5rem auto;
+    
+}
+
+.programas-section div ul li{
+    list-style: none;
+
+}
+
+.programas-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.programas{
+    border: 1px solid red;
+    border-radius: 10px;
+    width: 18rem;
+    height: 28rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+
+.historiaRadio {
+    position: relative; /* Required for positioning child elements */
+    width: 98vw;
+    height: 70vh;
+    background-color: blueviolet;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Vertically centers content */
+    justify-content: flex-end; /* Pushes text content to the right */
+    padding: 0 3vw; /* Adds horizontal padding */
+}
+
+.historiaRadioText {
+    width: 35vw; /* Adjusted for better text placement */
+    height: auto; /* Allows dynamic height for text */
+    color: white; /* Text color for contrast */
+    text-align: right;
+}
+
+.imgHenderson {
+    position: absolute; /* Allows precise positioning of the image */
+    top: -3rem; /* Moves the image slightly higher than the section */
+    left: 3.2rem; /* Aligns the image to the left edge of the screen */
+    width: 20vw;
+    height: 65vh;
+    object-fit: cover; /* Ensures the image fits nicely */
+    border: solid 1px brown;
+}
+
+.articulos-container{
+    margin-top: 3rem;
+    
+}
+
+.articulos div ul{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2rem;
+    list-style-type: none;
+}
+
+.articulo{
+    border: solid red 1px;
+    height: 20rem;
+    margin: 2rem .7rem;
+}
+
+.contacto{
+    height: 100vh;
+    background-color: #273b74;   
+    position: relative;
+    background-image: url('./assets/mountain.png') ;
+    background-size: cover;
+    background-position: center;
+}
+
+.contacto h2{
+    z-index: 130;
+    background: rgba(134, 133, 133, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.3px);
+    -webkit-backdrop-filter: blur(3.3px);
+    border:none;
+    color: #ffffff;
+}
+
+.contacto .form-container{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.586);
+
+    padding: 1rem;
+    height:62vh;
+    width: 40vw ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    
+}
+
+.contacto .form-container{
+    font-size: 2rem;
+
+    
+}
+
+
+
+.contact-form .form-control {
+    border: none;
+    border-bottom: 1px solid #ef3333;
+    background: transparent;
+    border-radius: 0;
+    padding-left: 0;
+    box-shadow: none;
+
+}
+
+.contact-form .form-control::placeholder{
+  color: #ffffff;
+    
+}
+.contact-form .form-control:focus::placeholder{
+    color: #ef3333;
+      
+}
+
+.contact-form .send{
+    margin-top: 20px;        
+}
+
+.contacto .send .btn{
+    color: #ef3333;
+    border: 1px solid #ef3333;
+}
+
+.contacto .send .btn:hover{
+    color: #ffffff;
+
+    background-color: #ef3333;
+}
+
+
+footer{
+    
+    margin: 0 auto;
+    border: solid blue 1px;
+    height: 4.5rem;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+   
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0 13rem;
+}
+
+footer ul li{
+    margin: 0 2rem 0 2rem;
+}
+
+.music-button{
+    position:absolute;
+    border-radius:100%;
+    border-style: none;
+    width: 30px;
+    height: 30px;
+
+}
+
