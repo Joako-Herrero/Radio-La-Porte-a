@@ -1,164 +1,653 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="../public/css/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href=" https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css " rel="stylesheet">
-    <script src="../public/js/index.js"></script>
-    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="icon" href="../public/images/favicon.ico" type="image/x-icon">
+
 
     <title>Radio La Porteña</title>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <!-- Toggle Button (Hamburguesa) -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <!-- Logo Multimedios -->
-                <div class="logomultimedios">
-                    <i></i>
+    <section class="top-view" id="Home">
+        <a href="https://wa.me/521234567890?text=Hello%2C%20I%20would%20like%20more%20information" target="_blank"
+            class="whatsapp-container">
+            <div class="whatsapp-circle">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo"
+                    class="whatsapp-logo">
+            </div>
+            <div class="whatsapp-button">
+                ¡Comunicate con nosotros!
+            </div>
+        </a>
+        <header>
+
+            <nav class="navbar navbar-expand-lg navbar-light " id="nav">
+                <a class="linkHome" href="#Home">
+
+                    <img class="logo-radio" src="../public/images/logo-radio.png" alt="Logo radio">
+
+                </a>
+                <div class="container-fluid">
+                    <!-- Toggle Button (Hamburguesa) -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+                        aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Logo Multimedios -->
+                    <div class="logomultimedios">
+                        <i></i>
+                    </div>
+
+                    <!-- Logo Radio -->
+                    <div class="logoradio">
+                        <i></i>
+                    </div>
+                    <!-- Navbar Links (Oculto en móviles) -->
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 leftNavList">
+                            <li class="nav-item"><a class="nav-link" href="#programas">Programas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#tutorial">Tutorial</a></li>
+                        </ul>
+                        <div class="sound-wave">
+                            <div class="bars" id="bars">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <!-- Repeat this <div class="bar"></div> 160 times -->
+                            </div>
+                            <audio src="s" id="audioLink"></audio>
+                            <button class="control-btn" id="controlBtn">
+                                <i class="icon-play"></i>
+                            </button>
+                        </div>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 rightNavList">
+                            <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contacto">Contactanos</a></li>
+
+                        </ul>
+                    </div>
                 </div>
 
-                
-
-                <!-- Logo Radio -->
-                <div class="logoradio">
-                    <i></i>
+            </nav>
+            <!-- Sidebar (Offcanvas) -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="sidebarLabel">Menú</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-
-                <!-- Navbar Links (Oculto en móviles) -->
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 leftNavList">
-                        <li class="nav-item"><a class="nav-link" href="#">Contactanos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Tutorial</a></li>
+                <div class="offcanvas-body">
+                    <!-- Lista 1 -->
+                    <ul class="leftNavList">
+                        <li><a href="#">Contactanos</a></li>
+                        <li><a href="#">Tutorial</a></li>
                     </ul>
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 rightNavList">
-                        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Programas</a></li>
+                    <!-- Lista 2 -->
+                    <ul class="rightNavList">
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Programas</a></li>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </header>
 
-        <!-- Sidebar (Offcanvas) -->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="sidebarLabel">Menú</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <!-- Lista 1 -->
-                <ul class="leftNavList">
-                    <li><a href="#">Contactanos</a></li>
-                    <li><a href="#">Tutorial</a></li>
-                </ul>
-                <!-- Lista 2 -->
-                <ul class="rightNavList">
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Programas</a></li>
-                </ul>
+
+        <div class="tour">
+            <img src="../public/images/tour-5.webp" id="tourCarrusel" alt="Imagen Carrusel">
+            <div id="square"></div>
+            <div class="titulo">
+                <h1>Somos Diferentes, Somos Radio La Porteña</h1>
+                <h2>Somos Diferentes, Somos Radio La Porteña</h2>
+
             </div>
         </div>
-    </header>
-
-    <div class="separador"></div>
-
-    <div class="tour">
-        <img src="../public/images/imagen.jpg" id="tourCarrusel" alt="Imagen Carrusel">
-    </div>
-
-    <div class="separador2"></div>
-
-
-    <div class="envivo-button">
-        <a href="">escuchanos en vivo</a>
-        <div class="pauseplay">
-            <button class="music-button play">
-                <i class="pause"></i>
-            </button>
-            <button class="music-button pause">
-                <i class="play"></i>
-            </button>
+        <div class="scroll-arrow">
+            <span></span>
         </div>
-    </div>
+        <ul class="social-list">
+            <li><a href="https://www.instagram.com/multimedio_henderson/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li><a href="https://www.facebook.com/profile.php?id=61558798877564" target="_blank"><i
+                        class="fa-brands fa-facebook"></i>
+                </a>
+            </li>
+            <li><a href="https://www.youtube.com/@MultimedioHenderson" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></i>
+                </a>
+            </li>
+            <li><a href="https://www.tiktok.com/@multimediohenderson" target="_blank"><i
+                        class="fa-brands fa-tiktok"></i>
+                </a>
+            </li>
+        </ul>
 
-    <section class="programas-section">
+    </section>
+
+    <section class="historiaRadio" id="nosotros">
+        <div>
+            <img src="../public/images/Radio-frente.png" class="imgHenderson" alt="">
+
+            <div class="historiaRadioText">
+                <h2>Historia de Radio "La Porteña FM Henderson"</h2>
+                <p class="historiaRadioParagraph">Radio La Porteña nació en 2021 con un propósito claro: mantener vivas
+                    las raíces del folclore argentino y las tradiciones que nos definen. Desde sus inicios, se convirtió
+                    en un espacio donde la música, la historia y la cultura popular se encuentran, ofreciendo a su
+                    audiencia un refugio sonoro lleno de nostalgia y pasión.</p>
+                <p class="historiaRadioParagraph">Con una programación pensada especialmente para quienes valoran
+                    nuestras costumbres, la radio ha sabido conectar con un público que encuentra en sus ondas un lazo
+                    con el pasado, una compañía fiel y un recordatorio de la identidad argentina. Más que una emisora,
+                    Radio La Porteña es un rincón donde las guitarras criollas, las zambas y las chacareras nunca dejan
+                    de sonar.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="programas-section" id="programas">
         <h2>Conoce nuestra programacion:</h2>
 
-        <div >
+        <div>
             <ul class="programas-container">
                 <li>
                     <div class="programas">
-                        <img src="" alt="">
-                        <h3>Esta boca es mía</h3>
-                        <p></p>
+                        <img class="programa" src="../public/images/estaBoca.png" alt="">
+                        <a href="#" class="infoProgramaTrigger" data-target="InfoEstaBocaEsMia">
+                            <div class="descProgr">
+                                <h3>Esta Boca es Mia</h3>
+                                <hr>
+                                <p>El magazine de las mañanas con la calidez y el estilo inconfundible de Roberto Casas.
+                                    Un espacio donde el folklore, la reflexión y la actualidad se encuentran para
+                                    acompañar cada jornada. Información, entrevistas y la voz de la gente hacen de este
+                                    programa una cita imperdible de lunes a viernes.</p>
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </a>
+                        <div class="blur-background" id="blurBackground"></div>
+
+                        <div class="infoPrograma" id="InfoEstaBocaEsMia">
+                            <div class="fondoTitulo"></div>
+                            <div class="fondoTitulo2"></div>
+
+                            <div class="contenedorInfo">
+
+                                <h3>Esta Boca es Mia</h3>
+                                <button class="volverBoton">
+                                    <div class="bgButton"></div>
+                                    <i class="fa-solid fa-circle-down"></i>
+                                </button>
+
+                                <h4>Con la conduccion de Roberto Casas</h4>
+                                <div class="infoProgramaTexto">
+
+                                    <img src="../public/images/Roberto.jpeg" alt="" class="infoProgramaImg">
+
+                                    <p>Cada mañana, Roberto Casas abre los micrófonos de Esta Boca es Mía para invitarte
+                                        a compartir un momento único. Con una selección especial de folklore que
+                                        enriquece el alma, este magazine matutino va más allá de la música: reflexiona
+                                        sobre la vida, informa sobre lo que ocurre en la región y el país, y genera un
+                                        espacio de diálogo con los oyentes.
+                                        <img src="../public/images/estaBoca.png" alt="" class="infoProgramaImg2">
+
+                                        A lo largo del programa, la actualidad se combina con entrevistas a personajes
+                                        que tienen algo interesante para contar, siempre con un tono cercano y ameno. La
+                                        interacción con la audiencia es clave: aquí, cada voz cuenta. De lunes a
+                                        viernes, las mañanas tienen su propia banda sonora y su lugar para la palabra,
+                                        porque en Esta Boca es Mía, hablar también es compartir.
+                                    </p>
+                                    <br>
+                                </div>
+                                <p class="horarioPrograma">De Lunes a Viernes a las 8:00 A.M</p>
+
+
+                            </div>
+
+                        </div>
                     </div>
-                </li>   
+                </li>
                 <li>
                     <div class="programas">
-                        <img src="" alt="">
-                        <h3>Alma Criolla</h3>
-                        <p></p>
+                        <img class="programa" src="../public/images/almaCriolla.png" alt="">
+                        <a href="#" class="infoProgramaTrigger" data-target="InfoAlmaCriolla">
+                            <div class="descProgr">
+                                <h3>Alma Criolla</h3>
+                                <hr>
+                                <p>Un homenaje vivo a nuestras raíces, con la conducción de Alberto Torres de la
+                                    Estancia El Chajá y Rusito Pérez, el cantor del pueblo, junto a la participación de
+                                    Roberto Casas. Porque la tradición se
+                                    siente y se honra, Alma Criolla mantiene encendida la llama de nuestra cultura.</p>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </a>
+                        <div class="blur-background" id="blurBackground"></div>
+
+
+                        <div class="infoPrograma" id="InfoAlmaCriolla">
+                            <div class="fondoTitulo"></div>
+                            <div class="fondoTitulo2"></div>
+
+                            <div class="contenedorInfo">
+
+                                <h3>Alma Criolla</h3>
+                                <button class="volverBoton">
+                                    <div class="bgButton"></div>
+                                    <i class="fa-solid fa-circle-down"></i>
+                                </button>
+
+                                <h4>Con la conduccion de Alberto Torres y Rusito Perez</h4>
+                                <div class="infoProgramaTexto">
+
+                                    <img src="../public/images/almaCriollaChicos.jpg" alt="" class="infoProgramaImg">
+
+                                    <p>Cuando suenan los acordes de una chacarera, una zamba o un malambo, el corazón se
+                                        llena de tradición. Eso es lo que se vive en Alma Criolla, el programa
+                                        folklórico conducido por Alberto Torres de la Estancia El Chajá y Rusito Pérez,
+                                        el cantor del pueblo, con la participación de Roberto Casas.
+
+                                        Cada emisión es un encuentro con nuestra identidad, donde la música folklórica
+                                        no solo se escucha, sino que se celebra. Entre guitarras y bombos, el aire se
+                                        llena de coplas, anécdotas y ese espíritu festivo que nos une como pueblo.
+                                        <img src="../public/images/almaCriolla.png" alt="" class="infoProgramaImg2">
+
+                                        En Alma Criolla, la cultura se mantiene viva con la presencia de artistas
+                                        locales que, en algunas ocasiones, se suman al programa con interpretaciones en
+                                        vivo, dándole aún más color a la jornada.
+
+                                        Pero más que un simple programa, Alma Criolla es una misión: la de honrar
+                                        nuestras raíces y mantener encendida la tradición. Porque la música no solo se
+                                        toca, se siente. Y aquí, la cultura se vive con el alma.
+                                    </p>
+                                    <br>
+                                </div>
+                                <p class="horarioPrograma">Domingos a las 9:00 A.M</p>
+
+
+                            </div>
+
+                        </div>
                     </div>
-                </li>   
+                </li>
                 <li>
                     <div class="programas">
-                        <img src="" alt="">
-                        <h3>Dinamica Cultural</h3>
-                        <p></p>
+                        <img class="programa" src="../public/images/dinamicaCultural.png" alt="">
+                        <a href="#" class="infoProgramaTrigger" data-target="InfoDinamicaCultural">
+                            <div class="descProgr">
+                                <h3>Dinamica Cultural</h3>
+                                <hr>
+                                <p>El punto de encuentro con el arte y la creatividad. Conducido por Graciela Dimarco y
+                                    Laura Bertuzzi, este programa explora diferentes expresiones culturales como la
+                                    música, el dibujo y mucho más.Un espacio para descubrir, aprender y celebrar la
+                                    cultura en todas sus formas.</p>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </a>
+                        <div class="blur-background" id="blurBackground"></div>
+
+                        <div class="infoPrograma" id="InfoDinamicaCultural">
+                            <div class="fondoTitulo"></div>
+                            <div class="fondoTitulo2"></div>
+
+                            <div class="contenedorInfo">
+
+                                <h3>Dinamica Cultural</h3>
+                                <button class="volverBoton">
+                                    <div class="bgButton"></div>
+                                    <i class="fa-solid fa-circle-down"></i>
+                                </button>
+
+                                <h4>Con la conduccion de Graciela Dimarco y Laura Bertuzzi</h4>
+                                <div class="infoProgramaTexto">
+
+                                    <img src="../public/images/dinamicaCulturalChicas.jpg" alt="" class="infoProgramaImg">
+
+                                    <p>El arte y la cultura tienen su propio espacio en Dinámica Cultural, un programa
+                                        donde la creatividad es la gran protagonista. Conducido por Graciela Dimarco y
+                                        Laura Bertuzzi, este ciclo nos invita a explorar un mundo de ideas, colores y
+                                        sonidos a través de conversaciones enriquecedoras y entrevistas con referentes
+                                        de distintas disciplinas.
+
+                                        Cada programa aborda dos temáticas culturales distintas, desde la música hasta
+                                        el dibujo, pasando por la literatura, el teatro, la danza y muchas otras
+                                        expresiones artísticas.
+                                        <img src="../public/images/dinamicaCultural.png" alt="" class="infoProgramaImg2">
+
+                                        Para profundizar en cada una, las conductoras reciben a dos invitados
+                                        especiales, expertos en sus áreas, quienes comparten su trayectoria, su visión y
+                                        sus experiencias en el mundo de la cultura.
+
+                                        En Dinámica Cultural, cada episodio es una oportunidad para aprender, inspirarse
+                                        y sumergirse en el arte de manera cercana y amena. Porque la cultura está en
+                                        constante movimiento, y aquí la exploramos con pasión y curiosidad.
+                                    </p>
+                                    <br>
+                                </div>
+                                <p class="horarioPrograma">Jueves a las 19:30 P.M</p>
+
+
+                            </div>
+
+                        </div>
+
                     </div>
-                </li>   
+                </li>
                 <li>
                     <div class="programas">
-                        <img src="" alt="">
-                        <h3>Cataclismo</h3>
-                        <p></p>
+                        <img class="programa" src="../public/images/cataclismo.png" alt="">
+                        <a href="#" class="infoProgramaTrigger" data-target="InfoCataclismo">
+                            <div class="descProgr">
+                                <h3>Cataclismo</h3>
+                                <hr>
+                                <p>Los viernes tienen su propio ritmo en Cataclismo. Conducido por Beatriz Balvidares,
+                                    este programa le pone sabor al cierre de la semana con la mejor música. Un espacio
+                                    con melodías que llegan al corazón, creando el
+                                    ambiente perfecto para empezar el fin de semana con toda la onda. </p>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </a>
+                        <div class="blur-background" id="blurBackground"></div>
+
+                        <div class="infoPrograma" id="InfoCataclismo">
+                            <div class="fondoTitulo"></div>
+                            <div class="fondoTitulo2"></div>
+
+                            <div class="contenedorInfo">
+
+                                <h3>Cataclismo</h3>
+
+
+                                <button class="volverBoton">
+                                    <div class="bgButton"></div>
+                                    <i class="fa-solid fa-circle-down"></i>
+                                </button>
+
+                                <h4>Con la conduccion de Beatriz Balvidares</h4>
+                                <div class="infoProgramaTexto">
+
+                                    <img src="../public/images/beatriz.jpg" alt="" class="infoProgramaImg">
+
+                                    <p>El viernes es sinónimo de fiesta, emoción y buena música, y Cataclismo lo sabe.
+                                        Con la conducción de Beatriz Balvidares, este programa es la antesala perfecta
+                                        para el fin de semana, con una selección de cumbia pegadiza y música romántica
+                                        que invita a moverse y sentir.
+
+                                        Cada semana, Cataclismo llega con una onda tropical inconfundible, donde los
+                                        ritmos contagiosos y las letras que tocan el corazón crean una combinación
+                                        explosiva.
+                                        <img src="../public/images/cataclismo.png" alt="" class="infoProgramaImg2">
+                                        Ya sea para disfrutar desde casa, en el trabajo o preparando la noche del
+                                        viernes, este programa es la compañía ideal para cerrar la semana con el mejor
+                                        ánimo.
+
+                                        Si querés empezar el fin de semana con ritmo y emoción, Cataclismo es tu cita de
+                                        todos los viernes. ¡Dale volumen y viví la música como se merece!
+                                    </p>
+                                    <br>
+                                </div>
+                                <p class="horarioPrograma">Viernes a las 17:00 P.M</p>
+
+
+                            </div>
+
+                        </div>
                     </div>
-                </li>   
+                </li>
                 <li>
                     <div class="programas">
-                        <img src="" alt="">
-                        <h3>¿Que escuchas?</h3>
-                        <p></p>
+                        <img class="programa" src="../public/images/queEscuchas.png" alt="">
+                        <a href="#" class="infoProgramaTrigger" data-target="InfoQueEscuchas">
+                            <div class="descProgr">
+                                <h3>¿Que escuchas?</h3>
+                                <hr>
+                                <p>¿Qué Escuchás? Conducido por Fran Paiz, este programa revive los grandes éxitos de
+                                    los '80s, '90s y '00s. Algunas
+                                    noches, la magia sube de nivel con sets en vivo de DJs. Una cita obligada para los
+                                    amantes de la música que marcó generaciones.
+                                </p>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </a>
+                        <div class="blur-background" id="blurBackground"></div>
+
+                        <div class="infoPrograma" id="InfoQueEscuchas">
+                            <div class="fondoTitulo"></div>
+                            <div class="fondoTitulo2"></div>
+
+                            <div class="contenedorInfo">
+
+                                <h3>¿Que Escuchas?</h3>
+                                <button class="volverBoton">
+                                    <div class="bgButton"></div>
+                                    <i class="fa-solid fa-circle-down"></i>
+                                </button>
+
+                                <h4>Con la conduccion de Fran Paez</h4>
+                                <div class="infoProgramaTexto">
+
+                                    <img src="../public/images/fran.jpg" alt="" class="infoProgramaImg">
+
+                                    <p>Si la nostalgia sonora tuviera un lugar en la radio, sin duda sería ¿Qué
+                                        Escuchás?, el programa que cada viernes y sábado de 20 a 22 te hace viajar en el
+                                        tiempo con los mejores clásicos de los '80s, '90s y '00s. Bajo la conducción de
+                                        Fran Paiz, esta propuesta es un recorrido por los grandes himnos de la música,
+                                        mayormente en inglés, con leyendas como Michael Jackson, Elton John y muchas
+                                        más.
+                                        <img src="../public/images/queEscuchas.png" alt="" class="infoProgramaImg2">
+                                        Pero la experiencia no se queda solo en los éxitos del pasado: ¿Qué Escuchás?
+                                        también te sumerge en la magia del cine con música de películas inolvidables y,
+                                        en ocasiones especiales, sorprende con sets en vivo de DJs que transforman la
+                                        noche en una verdadera pista de baile radial.
+
+                                        Si sos de los que sienten que la mejor música viene de aquellas décadas doradas,
+                                        ¿Qué Escuchás? es tu mejor plan de viernes y sábado. Subí el volumen, reviví los
+                                        clásicos y disfrutá del mejor sonido de siempre.
+                                    </p>
+                                    <br>
+                                </div>
+                                <p class="horarioPrograma">Viernes y Sabados a las 20:00 P.M</p>
+
+
+                            </div>
+
+                        </div>
                     </div>
-                </li>   
+                </li>
                 <li>
                     <div class="programas">
-                        <img src="" alt="">
-                        <h3>Tranquera Abierta</h3>
-                        <p></p>
+                        <img class="programa" src="../public/images/tranqueraAbierta.png" alt="">
+                        <a href="#" class="infoProgramaTrigger" data-target="InfoTranqueraAbierta">
+                            <div class="descProgr">
+                                <h3>Tranquera Abierta</h3>
+                                <hr>
+                                <p>Los sábados comienzan con el alma de nuestra tierra en Tranquera Abierta. Desde las 7
+                                    de la mañana, Beatriz Balvidares te acompaña con un programa clásico de folclore,
+                                    donde suenan las grandes canciones de siempre y también aquellas joyas que no se
+                                    consiguen fácilmente. </p>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </a>
+                        <div class="blur-background" id="blurBackground"></div>
+
+                        <div class="infoPrograma" id="InfoTranqueraAbierta">
+                            <div class="fondoTitulo"></div>
+                            <div class="fondoTitulo2"></div>
+
+                            <div class="contenedorInfo">
+
+                                <h3>Tranquera Abierta</h3>
+                                <button class="volverBoton">
+                                    <div class="bgButton"></div>
+                                    <i class="fa-solid fa-circle-down"></i>
+                                </button>
+
+                                <h4>Con la conduccion de Beatriz Balvidares</h4>
+                                <div class="infoProgramaTexto">
+
+                                    <img src="../public/images/beatriz.jpg" alt="" class="infoProgramaImg">
+
+                                    <p>Cuando el sol empieza a asomar en el horizonte, Tranquera Abierta ya está en el
+                                        aire, abriendo paso a la tradición y el sentir de nuestra tierra. Cada sábado a
+                                        las 7 de la mañana, Beatriz Balvidares nos invita a recorrer el camino del
+                                        folclore clásico, con aquellas canciones que marcaron generaciones y con otras
+                                        que, aunque difíciles de encontrar, siguen latiendo en la memoria de quienes
+                                        aman nuestra música.
+                                        <img src="../public/images/tranqueraAbierta.png" alt="" class="infoProgramaImg2">
+
+                                        En Tranquera Abierta, el folclore se vive con pasión y respeto, rescatando
+                                        sonidos que forman parte de nuestra identidad. Es el lugar donde las guitarras
+                                        criollas y las voces inmortales siguen contando historias, recordándonos que
+                                        nuestras raíces están siempre presentes.
+
+                                        Si la música de nuestra tierra es parte de vos, cada sábado a la mañana la
+                                        tranquera está abierta para recibirte. ¡Sintonizá y dejate llevar por la
+                                        tradición!
+                                    </p>
+                                    <br>
+                                </div>
+                                <p class="horarioPrograma">Sabados a las 7:00 A.M</p>
+
+
+                            </div>
+
+                        </div>
                     </div>
-                </li>   
+                </li>
                 <li>
                     <div class="programas">
-                        <img src="" alt="">
-                        <h3>Sabados del Recuerdo</h3>
-                        <p></p>
+                        <img class="programa" src="../public/images/sabadosRecuerdos.png" alt="">
+                        <a href="#" class="infoProgramaTrigger" data-target="InfoSabadosRecuerdos">
+                            <div class="descProgr">
+                                <h3>Sabados del Recuerdo</h3>
+                                <hr>
+                                <p>Un espacio donde la nostalgia se convierte en
+                                    melodía y los clásicos nunca pasan de moda. Cada sábado Nano Colamarino te
+                                    transporta a las décadas doradas
+                                    de la música latina, el programa revive los
+                                    grandes éxitos de los '60s, '70s y '80s, con artistas legendarios.</p>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </a>
+                        <div class="blur-background" id="blurBackground"></div>
+
+                        <div class="infoPrograma" id="InfoSabadosRecuerdos">
+                            <div class="fondoTitulo"></div>
+                            <div class="fondoTitulo2"></div>
+
+                            <div class="contenedorInfo">
+
+                                <h3>Sabados del Recuerdo</h3>
+                                <button class="volverBoton">
+                                    <div class="bgButton"></div>
+                                    <i class="fa-solid fa-circle-down"></i>
+                                </button>
+
+                                <h4>Con la conduccion de Nano Colamarino</h4>
+                                <div class="infoProgramaTexto">
+
+                                    <img src="../public/images/nano.jpg" alt="" class="infoProgramaImg">
+
+                                    <p>Los sábados tienen un sonido especial, el de aquellas canciones que marcaron una
+                                        época y siguen resonando en el corazón de quienes las vivieron. De 9:30 a 12:30,
+                                        Nano Colamarino abre las puertas de Sábados del Recuerdo, un programa dedicado a
+                                        la mejor música latina de los '60s, '70s y '80s.
+                                        <img src="../public/images/sabadosRecuerdos.png" alt=""
+                                            class="infoProgramaImg2">
+
+                                        Aquí, los grandes ídolos siguen brillando: José José, Sandro, Los Iracundos y
+                                        tantos otros que dejaron huella con sus voces inconfundibles y letras
+                                        inolvidables. Sábados del Recuerdo es un viaje musical donde la nostalgia se
+                                        mezcla con la alegría de volver a escuchar esas canciones que nos acompañaron en
+                                        momentos especiales.
+
+                                        Si la música de aquellas décadas sigue siendo parte de tu vida, cada sábado
+                                        tenés una cita con los recuerdos. Subí el volumen y disfrutá de los clásicos que
+                                        nunca se van.
+                                    </p>
+                                    <br>
+                                </div>
+                                <p class="horarioPrograma">Sabados a las 9:30 A.M</p>
+
+
+                            </div>
+
+                        </div>
                     </div>
-                </li>   
+                </li>
             </ul>
         </div>
     </section>
 
-    <section class="historiaRadio">
-        <div>
-            <img src=""class="imgHenderson" alt="">
-           
-            <div class="historiaRadioText">
-                <h2>Historia de Radio "La Porteña FM Henderson"</h2>
-                <p class="historiaRadioParagraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur accusantium ea quod laborum voluptatibus molestiae amet quos ut vero repellendus sequi, tempore est officia sunt eos labore placeat, esse laboriosam?</p>
-                <p class="historiaRadioParagraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur accusantium ea quod laborum voluptatibus molestiae amet quos ut vero repellendus sequi, tempore est officia sunt eos labore placeat, esse laboriosam?</p>
-            </div>
-            
-        </div>
-    </section>
+    <div class="envivo-button">
+        <a href="https://fmhenderson.onlineradio.com.ar/" target="_blank" id="musicButton">¡Escuchanos en vivo!</a>
 
+    </div>
+
+    <div class="logos">
+        <h3>Gracias a ellos todo esto es posible:</h3>
+
+        <div class="logo_items">
+            <img src="../public/images/1.png">
+            <img src="../public/images/11.png">
+            <img src="../public/images/12.png">
+            <img src="../public/images/13.png">
+            <img src="../public/images/14.png">
+            <img src="../public/images/15.png">
+            <img src="../public/images/16.png">
+            <img src="../public/images/17.png">
+            <img src="../public/images/18.png">
+            <img src="../public/images/4.png">
+            <img src="../public/images/5.png">
+            <img src="../public/images/7.png">
+            <img src="../public/images/8.png">
+            <img src="../public/images/9.png">
+
+        </div>
+        <div class="logo_items">
+            <img src="../public/images/1.png">
+            <img src="../public/images/11.png">
+            <img src="../public/images/12.png">
+            <img src="../public/images/13.png">
+            <img src="../public/images/14.png">
+            <img src="../public/images/15.png">
+            <img src="../public/images/16.png">
+            <img src="../public/images/17.png">
+            <img src="../public/images/18.png">
+            <img src="../public/images/4.png">
+            <img src="../public/images/5.png">
+            <img src="../public/images/7.png">
+            <img src="../public/images/8.png">
+            <img src="../public/images/9.png">
+
+        </div>
+    </div>
+    <!--
     <section class="articulos">
         <div class="container articulos-container">
 
@@ -192,76 +681,93 @@
             <a href="">Ver todos...</a>
         </div>
     </section>
-
-    <section class="tutorial">
+-->
+    <section class="tutorial" id="tutorial">
         <div>
             <h2>¿Sabias que podes vernos en vivo?</h2>
-            <p>acá esta el como</p>
-            <video src=""></video>
+            <p>Acá esta el como:</p>
+            <video controls>
+                <source src="../public/images/Tutorial.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
 
-    <section class="contacto">           
-        <h2>Ponete en contacto:</h2>
+    <section class="contacto" id="contacto">
 
+        <div class="beneficios">
+            <h3>Somos Diferentes</h3>
+
+            <h4>Somos Diferentes</h4>
+        </div>
+        <div class="divisor"></div>
         <div class="form-container ">
-      
+            <h2>Contacto:</h2>
             <div class="contact-form ">
-                 <form  class="contactform contact_form " id="contact_form">
-                    
+                <form class="contactform contact_form " id="contact_form">
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input name="name" id="fullName" type="text" placeholder="Full Name (Not requiered)" class="form-control"> 
+                                <input name="name" id="fullName" type="text" placeholder="Nombre" class="form-control">
                             </div>
                         </div>
+
+                        <!--El asunto debe ser Sitio Web para tener un orden mas claro en el correo mismo-->
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control" requiered>  
+                                <input id="email" name="email" type="email" placeholder="Correo Electronico"
+                                    class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input id="subject" name="subject" type="text" placeholder="Subject" class="form-control" requiered> 
-                            </div>
-                        </div>
+
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea id="message" name="message" placeholder="Message" class="form-control" rows="3" requiered></textarea> 
+                                <textarea id="message" name="message" placeholder="Mensaje (Maximo 2000 caracteres)."
+                                    class="form-control" rows="3" required maxlength="2000"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="send">
-                                <button id="send_message" class="btn" type="button"><span>Contact Me</span></button>
+                                <button id="send_message" class="btn" type="button"><span>Enviar</span></button>
                             </div>
                         </div>
+                        <p class="errorMessage" id="errorMessage"></p>
                     </div>
                 </form>
             </div>
-          
+
         </div>
     </section>
 
+
+
     <footer>
-        
+
         <ul class="leftFootList">
-            <li><a href="">Contactanos</a></li>
-            <li><a href="">Tutorial</a></li>
+            <li><a href="#Home">Volver Arriba</a></li>
+            <li><a href="#tutorial">Tutorial</a></li>
+
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#programas">Programas</a></li>
         </ul>
-        <div class="logomultimedios">
-            <i></i>
-        </div>
-        
-        <div class="logoradio">
-            <i></i>
-        </div>
-        <ul class="rightFootList">
-            <li><a href="">Nosotros</a></li>
-            <li><a href="">Programas</a></li>
-        </ul>
+        <p class="contact-text">Tambien podes ponerte en contacto al:<a
+                href="https://wa.me/521234567890?text=Hello%2C%20I%20would%20like%20more%20information" target="_blank">
+                2314-477103</a> <br> o escribinos a nuestro correo:
+            MultimedioLaPortena@gmail.com</p>
+
+        <a class="portfolio" href="https://joako-herrero.github.io/PortfolioFrontend/" target="_blank">Hecho por MJH</a>
+        <a class="portfolio2" href="https://joako-herrero.github.io/PortfolioFrontend/" target="_blank">Hecho por
+            MJH</a>
     </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="../public/js/index.js"></script>
+
 </body>
+
 </html>

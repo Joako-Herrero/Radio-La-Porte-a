@@ -1,158 +1,1058 @@
+@font-face {
+    font-family:"BagnardSans" ;
+    src: url(../fonts/BagnardSans.otf);
+}
+@font-face {
+    font-family: 'absans';
+    src: url(../fonts/Absans-Regular.woff);
+}
+
+@keyframes wave-sm {
+    0% {
+        opacity: 0.35;
+        height: 10px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 25px;
+    }
+}
+
+@keyframes waves {
+
+    0%,
+    100% {
+        clip-path: polygon(0% 45%,
+                16% 44%,
+                33% 50%,
+                54% 60%,
+                70% 61%,
+                84% 59%,
+                100% 52%,
+                100% 100%,
+                0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 60%,
+                15% 65%,
+                34% 66%,
+                51% 62%,
+                67% 50%,
+                84% 45%,
+                100% 46%,
+                100% 100%,
+                0% 100%);
+    }
+}
+
+@keyframes waves2 {
+
+    0%,
+    100% {
+        clip-path: polygon(0% 25%,
+                16% 24%,
+                13% 25%,
+                34% 40%,
+                50% 41%,
+                64% 39%,
+                800% 32%,
+                85% 100%,
+                0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 40%,
+                15% 45%,
+                14% 46%,
+                31% 42%,
+                47% 30%,
+                64% 25%,
+                80% 26%,
+                100% 100%,
+                0% 100%);
+    }
+}
+
+@keyframes wave-md {
+    0% {
+        opacity: 0.35;
+        height: 15px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 50px;
+    }
+}
+
+@keyframes wave-lg {
+    0% {
+        opacity: 0.35;
+        height: 15px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 70px;
+    }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+
+    0%,
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+
+    50% {
+        top: 25px;
+        opacity: 0.3;
+    }
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+
+    background-color: #edededc9 !important;
+}
+
+.top-view {
+    padding-bottom: 1rem;
+    background-color: #fff;
+}
+
 a {
-    text-decoration: none !important; /* Sobreescribe el estilo de Bootstrap */
-    color: inherit !important;       /* Opcional, para heredar el color del padre */
+    text-decoration: none !important;
+    /* Sobreescribe el estilo de Bootstrap */
+    color: inherit !important;
+    /* Opcional, para heredar el color del padre */
 }
 
 
-header{
+/* Container */
+.whatsapp-container {
+    width: 200px;
+    /* Width of the container */
+    height: 60px;
+    /* Height of the container */
+    top: 89%;
+    left: 85%;
+    z-index: 8000;
+    position: fixed;
+}
+
+/* Circle Button */
+.whatsapp-circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* WhatsApp Logo */
+.whatsapp-logo {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hidden Button */
+.whatsapp-button {
+    position: absolute;
+    top: 0;
+    left: -140px;
+    /* Start off-screen to the left */
+    width: 140px;
+    /* Width of the button */
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* Hover Effect: Rotate and Move the Circle */
+.whatsapp-container:hover .whatsapp-circle {
+    transform: translateX(-140px) rotate(-90deg);
+    /* Move left and rotate */
+    opacity: 0;
+    /* Fade out */
+}
+
+/* Hover Effect: Slide In the Button */
+.whatsapp-container:hover .whatsapp-button {
+    transform: translateX(200px);
+    /* Slide in from the left */
+    opacity: 1;
+    z-index: 1;
+}
+
+header {
     position: fixed;
     margin: 0 auto;
     width: 100vw;
-    border: solid red 1px;
+    z-index: 9000;
 }
 
-nav{
+nav {
     margin: .7rem auto;
     padding: 0;
     width: 90vw;
-    height: 4.5rem;
+    height: 5rem;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.16);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.8px);
-    -webkit-backdrop-filter: blur(5.8px);
-    border: 1px solid rgba(255, 255, 255, 1);
     position: fixed;
-    
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 16px;
 }
 
-nav ul{
+nav .sound-wave {
+    
+    margin: 0 auto;
+}
+
+nav .sound-wave .bars {
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+
+nav .sound-wave .bars .bar {
+    animation-name: wave-lg;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    background: rgb(138, 43, 226);
+    margin: 0 1.5px;
+    height: 10px;
+    width: 1px;
+
+}
+
+nav .sound-wave .bars .bar:nth-child(-n + 7),
+nav .sound-wave .bars .bar:nth-last-child(-n + 7) {
+    animation-name: wave-md;
+}
+
+nav .sound-wave .bars .bar:nth-child(-n + 3),
+nav .sound-wave .bars .bar:nth-last-child(-n + 3) {
+    animation-name: wave-sm;
+}
+
+nav .sound-wave .bars {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+
+}
+
+.control-btn {
+    position: absolute;
+    top: 50%;
+    left: 44vw;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    color: #1b1c1c;
+    cursor: pointer;
+    
+    /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+    /* Ensure it's above the bars */
+}
+
+.icon-play::before {
+    font-style: normal;
+
+    content: "\f04b";
+    /* Código Unicode de Font Awesome para "Play" */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.icon-pause::before {
+    font-style: normal;
+
+    content: "\f04c";
+    /* Código Unicode de Font Awesome para "Pause" */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* Show the button on hover */
+.sound-wave:hover .control-btn {
+    opacity: 1 !important;
+}
+
+.sound-wave:hover .bars {
+    opacity: 0;
+}
+
+nav ul {
     list-style: none;
     display: flex;
     align-items: center;
     margin: 0 13rem;
 }
 
-nav ul li{
-    margin: 4rem;
+nav ul li {
+    margin: 3rem;
 }
 
-.separador{
-    height: 10rem;
+nav .linkHome {
+    position: absolute;
+    height: 3.5rem;
+}
+
+nav .logo-radio {
+    height: 3.5rem;
+
+    position: absolute;
+    margin-left: 2rem;
+}
+
+.nav-link:hover {
+    color: rgb(138, 43, 226) !important;
+    font-size: 1rem;
+}
+
+section {
+    scroll-margin-top: 6rem;
+    /* Ajusta este valor según la altura de tu nav */
+}
+
+.separador {
+    height: 8rem;
     width: 100vw;
 }
 
-.separador2{
-    height: 2rem;
+.separador2 {
+    height: 1.8rem;
     width: 100vw;
 }
 
 .tour {
-    
-    height: 70vh; /* Altura del contenedor */
-    width: 80vw; /* Ancho del contenedor */
-    margin: 1rem auto; /* Centrado horizontal con margen automático */
-    border: dotted green 5px;
-    border-radius: 15px;
-    overflow: hidden; /* Evita que la imagen sobresalga */
-    position: relative; /* Necesario para posicionar la imagen absolutamente */
+    height: 100vh;
+    /* Altura del contenedor */
+    width: 100vw;
+    /* Ancho del contenedor */
+    margin: 0 auto;
+    /* Centrado horizontal con margen automático */
+    overflow: hidden;
+    /* Evita que la imagen sobresalga */
+    position: relative;
+    /* Necesario para posicionar la imagen absolutamente */
+}
+
+.tour .titulo {
+    position: relative;
+    width: 35vw;
+    left: 55%;
+    top: 25%;
+}
+
+.tour .titulo h1 {
+    font-size: 4rem;
+    position: absolute;
+    margin: 0;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(138, 43, 226);
+
+}
+
+.tour .titulo h2 {
+    font-size: 4rem;
+    position: absolute;
+    margin: 0;
+    color: rgb(138, 43, 226);
+    -webkit-text-stroke: 2.5px rgb(138, 43, 226);
+    animation: waves 3s ease-in-out infinite;
 }
 
 #tourCarrusel {
-    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
-    height: 100%; /* La imagen ocupará el 100% de la altura del contenedor */
-    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin deformarse */
-    position: absolute; /* Posicionamiento absoluto dentro del contenedor */
-    top: 0; /* Asegura que la imagen comience desde la parte superior */
-    left: 0; /* Asegura que la imagen comience desde la izquierda */
-    transition: opacity 0.5s ease-in-out; /* Efecto de transición suave para el desvanecimiento */
+    width: 45%;
+    /* La imagen ocupará el 100% del ancho del contenedor */
+    height: 55%;
+    /* La imagen ocupará el 100% de la altura del contenedor */
+    object-fit: cover;
+    /* Asegura que la imagen cubra todo el contenedor sin deformarse */
+    position: absolute;
+    /* Posicionamiento absoluto dentro del contenedor */
+    top: 9rem;
+    /* Asegura que la imagen comience desde la parte superior */
+    left: 5rem;
+    /* Asegura que la imagen comience desde la izquierda */
+    transition: opacity 0.5s ease-in-out;
+    /* Efecto de transición suave para el desvanecimiento */
+    z-index: 1000;
 }
 
-.envivo-button {
-    margin: 0 auto;
-    border: solid blue 5px;
-    width: 30vw;
-    border-radius: 30px;
-    height: 10vh;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    font-size: 2rem;
+#square {
+    width: 45%;
+    height: 55%;
+    position: absolute;
+    top: 10rem;
+    left: 6rem;
+    z-index: 130;
+    background-color: rgb(138, 43, 226);
+    transition: opacity 0.2s ease-in-out;
 }
 
-.music-button{
-  
-    border-radius:100%;
-    border-style: none;
-    width: 30px;
-    height: 30px;
-    
-}
-.programas-section{
-    margin: 5rem auto;
-    
-}
-
-.programas-section div ul li{
+/* Estilo para la lista */
+.social-list {
     list-style: none;
-
-}
-
-.programas-container{
+    padding: 0;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: .3rem;
+    width: 60vw;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
+    align-items: center;
 }
 
-.programas{
-    border: 1px solid red;
-    border-radius: 10px;
-    width: 18rem;
-    height: 28rem;
-    margin: 1rem;
-    text-align: center;
+/* Estilo para los elementos de la lista */
+.social-list li {
+    margin: 0 .3rem;
+}
+
+/* Estilo para los enlaces */
+.social-list a {
+    display: flex;
+    /* Ensures icon and text align horizontally */
+    align-items: center;
+    /* Aligns the icon and text vertically */
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0 .4rem;
+}
+
+/* Ajustes para el icono */
+.social-list a i {
+    font-size: 3rem;
+    /* Adjust icon size */
+    margin-right: .3rem;
+    /* Space between icon and text */
+    transition: transform 0.3s ease-in-out;
+    /* Suaviza la transición */
+}
+
+
+.social-list a:hover i {
+    transform: scale(1.2);
+    /* Aumenta el tamaño un 20% */
+}
+
+
+
+/* Scroll Arrow Container */
+.scroll-arrow {
+
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2rem;
+    height: 1rem;
+    z-index: 3000;
+}
+
+/* Arrow Design */
+.scroll-arrow span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3rem;
+    height: 3rem;
+    border-left: 4px solid #9c9b9b;
+    border-bottom: 4px solid #9c9b9b;
+    transform: translateX(-50%) rotate(-45deg);
+    animation: bounce 3s infinite;
 }
 
 
 .historiaRadio {
-    position: relative; /* Required for positioning child elements */
+    position: relative;
+    /* Require  d for positioning child elements */
     width: 98vw;
-    height: 70vh;
-    background-color: blueviolet;
+    height: 67vh;
+    background-color: rgb(138, 43, 226);
     margin: 0 auto;
+    margin-top: 8rem;
     display: flex;
-    align-items: center; /* Vertically centers content */
-    justify-content: flex-end; /* Pushes text content to the right */
-    padding: 0 3vw; /* Adds horizontal padding */
+    align-items: center;
+    /* Vertically centers content */
+    justify-content: flex-end;
+    /* Pushes text content to the right */
+    padding: 0 3vw;
+    /* Adds horizontal padding */
 }
 
 .historiaRadioText {
-    width: 35vw; /* Adjusted for better text placement */
-    height: auto; /* Allows dynamic height for text */
-    color: white; /* Text color for contrast */
+    width: 50vw;
+    /* Adjusted for better text placement */
+    height: auto;
+    /* Allows dynamic height for text */
+    color: white;
+    /* Text color for contrast */
     text-align: right;
+    font-size: 1.2rem;
+}
+
+.historiaRadioText h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .imgHenderson {
-    position: absolute; /* Allows precise positioning of the image */
-    top: -3rem; /* Moves the image slightly higher than the section */
-    left: 3.2rem; /* Aligns the image to the left edge of the screen */
-    width: 20vw;
+    position: absolute;
+    /* Allows precise positioning of the image */
+    top: -3rem;
+    /* Moves the image slightly higher than the section */
+    left: 8.2rem;
+    /* Aligns the image to the left edge of the screen */
+    width: 25vw;
     height: 65vh;
-    object-fit: cover; /* Ensures the image fits nicely */
-    border: solid 1px brown;
+    object-fit: cover;
+    /* Ensures the image fits nicely */
+    border: solid 3px #fff;
+    border-radius: 5px;
 }
 
-.articulos-container{
-    margin-top: 3rem;
+
+
+.programas-section {
+    margin: 5rem auto;
+    background-color: #fff;
+    padding-top: 1rem;
+}
+
+.programas-section h2 {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.programas-section div ul li {
+    list-style: none;
+
+}
+
+.programas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.programas {
+    margin: 1.5rem;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+
+
+/* Animación al hacer hover en el contenedor del programa */
+.programas:hover .infoProgramaTrigger {
+    opacity: 1; /* Hace visible el botón */
+    transform: translateY(0); /* Lo coloca en su posición final */
+}
+.programa {
+    border-radius: 10px;
+    width: 18rem;
+    height: 28rem;
+    overflow: hidden;
+    border: 2px rgb(96, 96, 96) solid;
+}
+
+.programa h3 {
+    color: #000;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+
+.descProgr {
+    color: #fff;
+    padding: .5rem;
+    width: 18rem;
+    height: 28rem;
+    text-align: center;
+    position: absolute;
+    border-radius: 10px;
+    transform: translateY(-23rem);
+    background-color: #7c7c7c64;
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+    box-shadow: 0 4px 30px rgba(245, 16, 16, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: 1.2rem;
+}
+
+
+
+.descProgr:hover {
+    transform: translateY(-28rem);
+    opacity: 1;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+/* Show the Info Div */
+.blur-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    backdrop-filter: blur(5px); /* Blur effect */
+    z-index: 2; /* Above the main content */
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.blur-background.active {
+    display: block; /* Show the overlay */
+    opacity: 1;
+}
+.infoPrograma.show {
+    visibility: visible; /* Fully visible */
+
+    opacity: 1; /* Fully visible */
+    transform: translateY(-50%) scale(1); /* Scale to normal size */
+}
+.infoPrograma.hide {
+    opacity: 0; /* Fully visible */
+    transform: translateY(50%) scale(0); /* Scale to normal size */
+}
+.infoPrograma {
+    visibility: hidden; /* Hidden by default */
+
+    width: 55vw;
+    height: 85vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    left: 22.5%;
+    transform: translateY(100%) scale(0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3; /* Above the blur background */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.infoPrograma button {
+    position: absolute;
+
+    left: 1rem;
+    top: 1rem;
+    transform: rotate(-270deg);
+    font-size: 3rem;
+    color: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    background-color: #09070700;
+}
+
+.infoPrograma .bgButton{
+    background-color: #000;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -4;
+}
+
+.infoPrograma h3 {
+    font-size: 4rem;
+    color: #000;
+    transform: rotate(-2deg);
+}
+
+.contenedorInfo {
+    position: relative;
+    z-index: 2;
+    /* Al frente */
+    padding: 20px;
+}
+
+.infoPrograma .fondoTitulo {
+    width: 120vw;
+    height: 6rem;
+    position: absolute;
     
+    left: -4rem;
+    top: 1.6rem;
+    z-index: 1;
+    /* Detrás del contenido */
+    isolation: isolate;
+    /* Crea un nuevo contexto de apilamiento */
+    transform: rotate(-2deg);
+
 }
 
-.articulos div ul{
+.infoPrograma .fondoTitulo2 {
+    width: 120vw;
+    height: 4rem;
+    position: absolute;
+    left: -4rem;
+    top: 6.5rem;
+    z-index: 1;
+    /* Detrás del contenido */
+    isolation: isolate;
+    /* Crea un nuevo contexto de apilamiento */
+    transform: rotate(-2deg);
+
+}
+
+
+.infoPrograma h4 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 1rem;
+    transform: rotate(-2deg);
+
+}
+
+.infoPrograma .infoProgramaImg {
+    float: right;
+    width: 13rem;
+    margin: 1rem;
+}
+
+.infoPrograma .infoProgramaImg2 {
+    float: left;
+    width: 13rem;
+    margin: 1rem;
+}
+
+.infoPrograma .infoProgramaTexto {
+    width: 40vw;
+    position: relative;
+    top: 6rem;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    z-index: 9000;
+}
+
+.infoPrograma .horarioPrograma {
+    margin-top: 9rem;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+
+/*Esta Boca es Mia*/
+.infoPrograma.infoEstaBocaEsMiaStyle{
+    border: 2px solid rgba(236, 215, 134, 0.628);
+    background-color: rgb(226, 186, 43);
+}
+
+.infoEstaBocaEsMiaStyle .fondoTitulo{
+   
+    background-color: rgb(255, 255, 255);
+
+}
+
+.infoEstaBocaEsMiaStyle .fondoTitulo2{
+   
+    background-color: rgb(0, 0, 0);
+
+}
+
+/*Alma*/
+.infoPrograma.infoAlmaCriollaStyle{
+   
+    border: 2px solid rgba(178, 163, 186, 0.628);
+    background-color: rgb(122, 36, 202);
+
+}
+.infoAlmaCriollaStyle .fondoTitulo{
+   
+    background-color: rgb(237, 240, 242);
+
+}
+
+.infoAlmaCriollaStyle .fondoTitulo2{
+   
+    background-color: rgb(43, 183, 226);
+
+}
+.infoAlmaCriollaStyle p{
+    color:#fff;
+}
+
+/*Dinamica*/
+.infoPrograma.infoDinamicaCulturalStyle{
+   
+    border: 2px solid rgba(178, 163, 186, 0.628);
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+}
+
+.infoDinamicaCulturalStyle .fondoTitulo{
+   
+    background-color: rgb(237, 240, 242);
+
+}
+
+.infoDinamicaCulturalStyle .fondoTitulo2{
+   
+    background-color: rgb(0, 0, 0);
+
+}
+
+/*Cataclismo*/
+.infoPrograma.infoCataclismoStyle{
+   
+    border: 2px solid rgba(178, 163, 186, 0.628);
+    background-color: #f1b188;
+    color: #fff;
+}
+.infoCataclismoStyle h3{
+   color:rgb(255, 255, 255) ;
+}
+.infoCataclismoStyle h4{
+    color:rgb(0, 0, 0) ;
+}
+
+.infoCataclismoStyle .fondoTitulo{
+   
+    background-color: rgb(0, 20, 241);
+
+}
+
+.infoCataclismoStyle .fondoTitulo2{
+   
+    background-color: rgb(255, 65, 65);
+
+}
+
+/*Que Escuchas*/
+.infoPrograma.infoQueEscuchasStyle{
+   
+    border: 2px solid rgba(178, 163, 186, 0.628);
+    background-color: #3884fb;
+    color: #fff;
+}
+
+.infoQueEscuchasStyle .fondoTitulo{
+    background-color:#ff5855;
+}
+
+.infoQueEscuchasStyle .fondoTitulo2{
+    background-color:#820443;
+}
+
+/*Tranquera Abierta*/
+.infoPrograma.infoTranqueraStyle{
+    border: 2px solid rgba(178, 163, 186, 0.628);
+    background-color:#ff9e01;
+    color: #fff;
+}
+
+.infoTranqueraStyle .fondoTitulo{
+    background-color:#db6ea7;
+}
+
+.infoTranqueraStyle .fondoTitulo2{ 
+    background-color: #3f8000;
+}
+
+/*Sabados del recuerdo*/
+.infoPrograma.infoSabadosStyle{
+   
+    border: 2px solid rgba(178, 163, 186, 0.628);
+    background-color: #ff3131;
+    color: #fff;
+}
+.infoSabadosStyle h3{
+    color: #fff;
+}
+
+.infoSabadosStyle .fondoTitulo{
+   
+    background-color:#e35622;
+
+}
+
+.infoSabadosStyle .fondoTitulo2{
+   
+    background-color: #d81a1a;
+
+}
+
+.infoPrograma img{
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+    
+.envivo-button {
+    margin: 0 auto;
+    width: 23vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 6rem;
+    background-color: rgb(215, 0, 0);
+    color: #fff;
+    border: solid rgb(215, 0, 0) 3px;
+}
+
+.envivo-button:hover {
+    background-color: rgba(255, 255, 255, 0);
+    transition: 0.3s ease-in-out;
+    color: #000;
+    border: solid #000 3px;
+
+
+}
+
+
+/*LOGOS NEGOCIOS*/
+
+@keyframes slides {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logos {
+    overflow: hidden;
+    padding: 5px 0px;
+    white-space: nowrap;
+    position: relative;
+    background-color: #9705c0;
+}
+
+.logos h3{
+    position: absolute;
+    left: 35%;
+    color: #fff;
+}
+
+.logos:before,
+.logos:after {
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+}
+
+.logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(138, 43, 226));
+}
+
+.logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(138, 43, 226));
+}
+
+.logo_items {
+    display: inline-block;
+    animation: 50s slides infinite linear;
+}
+
+
+.logo_items img {
+    height: 15rem;
+}
+
+/*LOGOS NEGOCIOS*/
+
+.tutorial {
+    margin: 2rem auto;
+    position: relative;
+    background-color: #ffffff;
+    width: 100vw;
+    padding: 1rem 0 0 3rem;
+    height: 90vh;
+}
+
+.tutorial p{
+    font-size: 1.3rem;
+}
+
+.tutorial video{
+    width: 60vw;
+    position: relative;
+    left: 17%;
+    border-radius: 15px;
+}
+/* Articulos
+
+.articulos-container {
+    margin-top: 3rem;
+
+}
+
+.articulos div ul {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -161,123 +1061,198 @@ nav ul li{
     list-style-type: none;
 }
 
-.articulo{
+.articulo {
     border: solid red 1px;
     height: 20rem;
     margin: 2rem .7rem;
 }
 
-.contacto{
-    height: 100vh;
-    background-color: #273b74;   
+Articulos */
+.contacto {
+    height: 90vh;
+    width: 95vw;
+    margin: 0 auto;
+    background-color: #ffffff;
     position: relative;
-    background-image: url('./assets/mountain.png') ;
+    background-image: url('../images/Radio-form.png');
     background-size: cover;
     background-position: center;
+    margin-bottom: 3rem;
+
 }
 
-.contacto h2{
-    z-index: 130;
-    background: rgba(134, 133, 133, 0);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.3px);
-    -webkit-backdrop-filter: blur(3.3px);
-    border:none;
-    color: #ffffff;
+
+
+.contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
-
-.contacto .form-container{
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.586);
-
-    padding: 1rem;
-    height:62vh;
-    width: 40vw ;
+.contacto .beneficios{
+    background: rgb(255, 255, 255);
+    height: 80vh;
+    width: 20vw;
+    border-radius: 15px 0px 0px 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    position: absolute;
-    top: 25%;
-    left: 30%;
-    
+    border-right: 1px solid #000;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-.contacto .form-container{
-    font-size: 2rem;
+.contacto h3 {
+    font-size: 3.5rem;
+    position: absolute;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(138, 43, 226);
+    width: 20vw;
 
-    
+}
+
+.contacto h4 {
+    font-size: 3.5rem;
+    position: absolute;
+    color: rgb(138, 43, 226);
+    -webkit-text-stroke: 2px rgb(138, 43, 226);
+    animation: waves2 3s ease-in-out infinite;
+    width: 20vw;
+
+}
+.contacto .beneficios li{
+    width: 80%;
+    margin: 4rem auto;
+}
+
+.contacto .form-container {
+    background: rgb(255, 255, 255);
+    border-radius: 0px 15px 15px 0px;
+    height: 80vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    padding: 3rem;
+    border-left: 1px solid #000;
+
+}
+.contacto .form-container h2{
+    position: absolute;
+    top: 3rem;
+    font-size: 3rem;
+    color: rgb(138, 43, 226);
+    font-weight: 600;
 }
 
 
 
 .contact-form .form-control {
     border: none;
-    border-bottom: 1px solid #ef3333;
+    border-bottom: 2px solid rgb(0, 0, 0);
     background: transparent;
     border-radius: 0;
     padding-left: 0;
     box-shadow: none;
+    padding-left: 1rem;
+    margin: 1rem;
+    color: #000;
+}
+
+.form-control {
+    font-size: 1.5rem !important;
+    padding: 0 !important;
+}
+
+.contact-form .form-control::placeholder {
+    color: #6a6a6a;
 
 }
 
-.contact-form .form-control::placeholder{
-  color: #ffffff;
-    
-}
-.contact-form .form-control:focus::placeholder{
-    color: #ef3333;
-      
+
+.contact-form .send {
+    margin-top: 20px;
 }
 
-.contact-form .send{
-    margin-top: 20px;        
+.contacto .send .btn {
+    color: #fff;
+
+    background-color: rgb(138, 43, 226);
 }
 
-.contacto .send .btn{
-    color: #ef3333;
-    border: 1px solid #ef3333;
+.contacto .send .btn:hover {
+    color: #fff;
+    background-color: #460880c8;
+
 }
 
-.contacto .send .btn:hover{
-    color: #ffffff;
-
-    background-color: #ef3333;
+.errorMessage{
+    color: #eb1919;
+    font-size: 2.1rem;
 }
 
 
-footer{
-    
+footer {
+    background-color: rgb(138, 43, 226);
     margin: 0 auto;
-    border: solid blue 1px;
-    height: 4.5rem;
+    border: solid rgb(153, 153, 155) 1px;
+    height: 10.5rem;
     display: flex;
-    align-items: center; 
-    justify-content: center;
-   
+    align-items: center;
+    color: #fff;
+    max-width: 100vw;
 }
 
-footer ul{
+footer ul {
     list-style: none;
     display: flex;
     align-items: center;
-    margin: 0 13rem;
+    margin: 0 4rem;
 }
 
-footer ul li{
-    margin: 0 2rem 0 2rem;
+footer ul li {
+    margin: 0 1rem 0 1rem;
+    font-size: 1.3rem;
 }
 
-.music-button{
-    position:absolute;
-    border-radius:100%;
+footer  a:hover {
+    color: #ef3333 !important;
+    
+}
+
+.contact-text {
+    margin: 0;
+    width: 17rem;
+    position: relative;
+    left: 25%;
+}
+
+.music-button {
+    position: absolute;
+    border-radius: 100%;
     border-style: none;
     width: 30px;
     height: 30px;
 
 }
 
+footer .portfolio{
+    left: 45%;
+    font-size: 1.4rem;
+    position: absolute;
+    margin: 0;
+    color: transparent !important;
+    -webkit-text-stroke: 2.7px #fff;
+
+}
+
+footer .portfolio2{
+    font-size: 1.4rem;
+    position: absolute;
+    left: 45%;
+    margin: 0;
+    color: #ef3333;
+    -webkit-text-stroke: 2.7px #ef3333;
+    animation: waves 3s ease-in-out infinite;
+}
